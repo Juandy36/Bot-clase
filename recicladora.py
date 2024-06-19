@@ -4,7 +4,6 @@ import random
 import os
 import requests 
 
-
 description = '''An example bot to showcase the discord.ext.commands extension
 module.
 
@@ -121,5 +120,13 @@ async def Ejemplo(ctx):
     for _ in range(10):
         cosa = random.choice(list(cosas.keys()))
         await ctx.send(cosa)
+
+        @bot.command()
+        async def contaminacion(ctx):
+         await ctx.send(f'Hablamos de contaminación cuando en un entorno ingresan elementos o sustancias que normalmente no deberían estar en él y que afectan el equilibrio del ecosistema.')
+
+@bot.command()
+async def cuidado_ambiental(ctx):
+    await ctx.send(f'No tires basura en las calles. Evita quemar basura, hojas y otros objetos, así como hacer fogatas en bosques o en plena ciudad. Riega las plantas durante la noche o muy temprano, cuando el Sol tarda más en evaporar el agua. {bot.user}!')
 
 bot.run('token')
